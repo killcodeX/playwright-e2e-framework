@@ -408,7 +408,7 @@ await page.waitForTimeout(5000)
 npx playwright test --debug
 
 # Debug specific test
-npx playwright test tests/auth/login.spec.ts --debug
+npx playwright test tests/auth/login.spec.ts --debug 
 ```
 
 ### Trace Viewer

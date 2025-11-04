@@ -1,0 +1,46 @@
+{
+    "registration": {
+        "valid": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john.doe@example.com",
+            "password": "SecurePass123!",
+            "confirmPassword": "SecurePass123!",
+            "phone": "+1234567890",
+            "address": "123 Main St",
+            "city": "New York",
+            "state": "NY",
+            "zipCode": "10001",
+            "country": "USA"
+        },
+        "missingFields": {
+            "firstName": "Jane",
+            "email": "jane@example.com"
+        }
+    },
+    "contact": {
+        "support": {
+            "name": "Customer Name",
+            "email": "customer@example.com",
+            "subject": "Product Inquiry",
+            "message": "I would like to know more about your products."
+        },
+        "complaint": {
+            "name": "Upset Customer",
+            "email": "upset@example.com",
+            "subject": "Order Issue",
+            "message": "My order #12345 has not arrived yet."
+        }
+    },
+    "search": {
+        "validQueries": [
+            "wireless mouse",
+            "laptop",
+            "headphones"
+        ],
+        "noResultsQueries": [
+            "xyzabc123nonsense",
+            "qwertyuiop"
+        ]
+    }
+}

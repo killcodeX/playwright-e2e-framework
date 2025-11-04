@@ -1,0 +1,40 @@
+{
+    "electronics": [
+        {
+            "id": "prod-001",
+            "name": "Wireless Mouse",
+            "price": 29.99,
+            "category": "Electronics",
+            "inStock": true
+        },
+        {
+            "id": "prod-002",
+            "name": "USB-C Cable",
+            "price": 12.99,
+            "category": "Electronics",
+            "inStock": true
+        }
+    ],
+    "clothing": [
+        {
+            "id": "prod-101",
+            "name": "Cotton T-Shirt",
+            "price": 19.99,
+            "category": "Clothing",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "inStock": true
+        }
+    ],
+    "outOfStock": {
+        "id": "prod-999",
+        "name": "Rare Item",
+        "price": 99.99,
+        "category": "Limited",
+        "inStock": false
+    }
+}

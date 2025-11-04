@@ -1,0 +1,35 @@
+{
+    "environments": {
+        "dev": {
+            "baseUrl": "https://dev.example.com",
+            "apiUrl": "https://api-dev.example.com"
+        },
+        "staging": {
+            "baseUrl": "https://staging.example.com",
+            "apiUrl": "https://api-staging.example.com"
+        },
+        "production": {
+            "baseUrl": "https://example.com",
+            "apiUrl": "https://api.example.com"
+        }
+    },
+    "timeouts": {
+        "short": 5000,
+        "medium": 10000,
+        "long": 30000
+    },
+    "viewport": {
+        "mobile": {
+            "width": 375,
+            "height": 667
+        },
+        "tablet": {
+            "width": 768,
+            "height": 1024
+        },
+        "desktop": {
+            "width": 1920,
+            "height": 1080
+        }
+    }
+}

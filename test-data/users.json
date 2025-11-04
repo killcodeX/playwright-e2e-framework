@@ -1,0 +1,50 @@
+{
+    "valid": {
+        "email": "test.user@example.com",
+        "password": "SecurePass123!",
+        "firstName": "Test",
+        "lastName": "User",
+        "phone": "+1234567890"
+    },
+    "admin": {
+        "email": "admin@example.com",
+        "password": "AdminPass456!",
+        "firstName": "Admin",
+        "lastName": "User",
+        "role": "admin"
+    },
+    "invalid": {
+        "wrongPassword": {
+            "email": "test.user@example.com",
+            "password": "WrongPassword!"
+        },
+        "nonExistent": {
+            "email": "nonexistent@example.com",
+            "password": "Pass123!"
+        },
+        "invalidFormat": {
+            "email": "invalid-email",
+            "password": "123"
+        }
+    },
+    "bulk": [
+        {
+            "email": "user1@example.com",
+            "password": "Pass123!",
+            "firstName": "User",
+            "lastName": "One"
+        },
+        {
+            "email": "user2@example.com",
+            "password": "Pass456!",
+            "firstName": "User",
+            "lastName": "Two"
+        },
+        {
+            "email": "user3@example.com",
+            "password": "Pass789!",
+            "firstName": "User",
+            "lastName": "Three"
+        }
+    ]
+}
