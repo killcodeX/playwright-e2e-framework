@@ -31,4 +31,30 @@ test.describe("Product page Tests", () => {
     // check if the menu opens or not
     await productPage.closeMenu();
   });
+
+  test("sort product by Name (A to Z)", async ({ page, productPage }) => {
+    await productPage.sortProduct("az");
+
+    const isSorted = await productPage.verifySortedByName("asc");
+    expect(isSorted).toBe(true);
+  });
+
+  test("sort product by Name (Z to A)", async ({ page, productPage }) => {
+    await productPage.sortProduct("za");
+
+    const isSorted = await productPage.verifySortedByName("desc");
+    expect(isSorted).toBe(true);
+  });
+
+  test("sort product by Price (low to high)", async ({ page, productPage }) => {
+    await productPage.sortProduct("lohi");
+    const isSorted = await productPage.verifySortedByPrice("asc");
+    expect(isSorted).toBe(true);
+  });
+
+  test("sort product by Price (high to low)", async ({ page, productPage }) => {
+    await productPage.sortProduct("hilo");
+    const isSorted = await productPage.verifySortedByPrice("desc");
+    expect(isSorted).toBe(true);
+  });
 });

@@ -73,4 +73,33 @@ export class ProductPage extends BasePage {
   async sortProduct(value: string) {
     return await this.selectByValue(this.productSort, value);
   }
+
+  async getProductNames(): Promise<string[]> {
+    return await this.page.locator(".inventory_item_name").allTextContents();
+  }
+
+  async getProductPrices(): Promise<number[]> {
+    const priceTexts = await this.page
+      .locator(".inventory_item_price")
+      .allTextContents();
+    return priceTexts.map((price) => parseFloat(price.replace("$", "")));
+  }
+
+  async verifySortedByName(order: "asc" | "desc") {
+    const names = await this.getProductNames();
+    const sorted =
+      order === "asc" ? [...names].sort() : [...names].sort().reverse();
+
+    return names.every((name, i) => name === sorted[i]);
+  }
+
+  async verifySortedByPrice(order: "asc" | "desc") {
+    const prices = await this.getProductPrices();
+    const sorted =
+      order === "asc"
+        ? [...prices].sort((a, b) => a - b)
+        : [...prices].sort((a, b) => b - a);
+
+    return prices.every((price, i) => price === sorted[i]);
+  }
 }
