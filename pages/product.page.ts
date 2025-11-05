@@ -102,4 +102,15 @@ export class ProductPage extends BasePage {
 
     return prices.every((price, i) => price === sorted[i]);
   }
+
+  async addProductToCart(slug: string) {
+    await this.page.locator(`[data-test="add-to-cart-${slug}"]`).click();
+  }
+
+  async isProductInCart(productSlug: string): Promise<boolean> {
+    const removeButton = this.page.locator(
+      `[data-test="remove-${productSlug}"]`
+    );
+    return await removeButton.isVisible();
+  }
 }

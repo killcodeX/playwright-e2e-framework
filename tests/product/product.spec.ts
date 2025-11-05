@@ -57,4 +57,12 @@ test.describe("Product page Tests", () => {
     const isSorted = await productPage.verifySortedByPrice("desc");
     expect(isSorted).toBe(true);
   });
+
+  test("add specific products to cart", async ({ productPage }) => {
+    await productPage.addProductToCart("sauce-labs-backpack");
+    await productPage.addProductToCart("sauce-labs-bike-light");
+
+    // Verify these specific products are in cart
+    expect(await productPage.isProductInCart("sauce-labs-backpack")).toBe(true);
+  });
 });
