@@ -113,4 +113,11 @@ export class ProductPage extends BasePage {
     );
     return await removeButton.isVisible();
   }
+
+  /**
+   * Click cart button
+   */
+  async openCartPage() {
+    await this.clickElement(this.cartBtn);
+  }
 }

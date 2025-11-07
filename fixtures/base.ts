@@ -1,6 +1,8 @@
 import { test as base } from "@playwright/test";
 import { LoginPage } from "@pages/login.page";
 import { ProductPage } from "@pages/product.page";
+import { CartPage } from "@pages/cart.page";
+import { InformationPage } from "@pages/information.page";
 
 /**
  * Custom test fixtures
@@ -9,6 +11,8 @@ import { ProductPage } from "@pages/product.page";
 type MyFixtures = {
   loginPage: LoginPage;
   productPage: ProductPage;
+  cartPage: CartPage;
+  infoPage: InformationPage;
 };
 
 /**
@@ -31,6 +35,19 @@ export const test = base.extend<MyFixtures>({
   productPage: async ({ page }, use) => {
     const productPage = new ProductPage(page);
     await use(productPage);
+  },
+  /**
+   * cartPage fixture
+   * Automatically creates CartPage instance for each test
+   */
+  cartPage: async ({ page }, use) => {
+    const cartPage = new CartPage(page);
+    await use(cartPage);
+  },
+
+  infoPage: async ({ page }, use) => {
+    const infoPage = new InformationPage(page);
+    await use(infoPage);
   },
 });
 
