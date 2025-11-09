@@ -3,6 +3,7 @@ import { LoginPage } from "@pages/login.page";
 import { ProductPage } from "@pages/product.page";
 import { CartPage } from "@pages/cart.page";
 import { InformationPage } from "@pages/information.page";
+import { CheckoutPage } from "@pages/checkout.page";
 
 /**
  * Custom test fixtures
@@ -13,6 +14,7 @@ type MyFixtures = {
   productPage: ProductPage;
   cartPage: CartPage;
   infoPage: InformationPage;
+  checkoutPage: CheckoutPage;
 };
 
 /**
@@ -44,10 +46,21 @@ export const test = base.extend<MyFixtures>({
     const cartPage = new CartPage(page);
     await use(cartPage);
   },
-
+  /**
+   * infoPage fixture
+   * Automatically creates InformationPage instance for each test
+   */
   infoPage: async ({ page }, use) => {
     const infoPage = new InformationPage(page);
     await use(infoPage);
+  },
+  /**
+   * checkoutPage fixture
+   * Automatically creates CheckoutPage instance for each test
+   */
+  checkoutPage: async ({ page }, use) => {
+    const checkoutPage = new CheckoutPage(page);
+    await use(checkoutPage);
   },
 });
 

@@ -60,10 +60,20 @@ export class InformationPage extends BasePage {
   async fillPostalCode(postalCode: string) {
     await this.fillInput(this.postalCode, postalCode);
   }
+
+  async fillInformation(
+    firstName: string,
+    lastName: string,
+    postalCode: string
+  ) {
+    await this.fillFirstName(firstName);
+    await this.fillLastName(lastName);
+    await this.fillPostalCode(postalCode);
+  }
   /**
    * Continue shopping (go back to products page)
    */
-  async continueShopping() {
+  async continueToCheckout() {
     await this.clickElement(this.continueBtn);
     await this.verifyUrl("https://www.saucedemo.com/checkout-step-two.html");
   }
